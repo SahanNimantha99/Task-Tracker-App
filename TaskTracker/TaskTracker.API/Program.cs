@@ -1,25 +1,30 @@
-using Microsoft.EntityFrameworkCore;
-using TaskTracker.Infrastructure.Data;
-using TaskTracker.Application.Interfaces;
-using TaskTracker.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using TaskTracker.Application.Interfaces;
+using TaskTracker.Application.Services;
+using TaskTracker.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// ------------------ Services ------------------
+// Add controllers
 builder.Services.AddControllers();
 
-// Add DbContext
+// Add DbContext (MySQL)
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(8, 0, 33))));
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 33))
+    )
+);
 
-// Register your services
+// Add services (DI)
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<TaskService>(); // Add TaskService if you need it
 
-// JWT Authentication setup
+// JWT Authentication
 var key = Encoding.ASCII.GetBytes(builder.Configuration["JwtSettings:SecretKey"]);
 
 builder.Services.AddAuthentication(options =>
@@ -49,7 +54,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure middleware
+// ------------------ Middleware ------------------
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -61,12 +66,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-// **Seed database**
+// ------------------ Seeder ------------------
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    dbContext.Database.EnsureCreated();
-    DbSeeder.Seed(dbContext);
+    DbSeeder.Seed(dbContext);  // Pass the DbContext to your Seed method
 }
 
 app.Run();

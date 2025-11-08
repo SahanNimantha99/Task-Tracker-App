@@ -1,7 +1,6 @@
-using BCrypt.Net;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -9,31 +8,32 @@ using TaskTracker.Application.DTOs;
 using TaskTracker.Application.Interfaces;
 using TaskTracker.Domain.Entities;
 using TaskTracker.Infrastructure.Data;
+using BCrypt.Net;
 
 namespace TaskTracker.Application.Services
 {
     public class UserService : IUserService
     {
         private readonly AppDbContext _context;
-        private readonly IConfiguration _config;
+        private readonly IConfiguration _configuration;
 
-        public UserService(AppDbContext context, IConfiguration config)
+        public UserService(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
-            _config = config;
+            _configuration = configuration;
         }
 
         public async Task<UserDto> RegisterAsync(UserRegisterDto dto)
         {
-            if (await _context.Users.AnyAsync(u => u.Username == dto.Username))
-                throw new Exception("Username already exists");
+            if (await _context.Users.AnyAsync(u => u.Email == dto.Email))
+                throw new Exception("Email already exists");
 
             var user = new User
             {
                 Username = dto.Username,
                 Email = dto.Email,
-                Role = dto.Role,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password)
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+                Role = "User"
             };
 
             _context.Users.Add(user);
@@ -50,36 +50,65 @@ namespace TaskTracker.Application.Services
 
         public async Task<string> LoginAsync(UserLoginDto dto)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == dto.Username);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
             if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
                 throw new Exception("Invalid credentials");
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_config["JwtSettings:SecretKey"]);
+            var key = Encoding.ASCII.GetBytes(_configuration["JwtSettings:SecretKey"]);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim(ClaimTypes.Name, user.Username),
+                    new Claim(ClaimTypes.Email, user.Email),
                     new Claim(ClaimTypes.Role, user.Role)
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(int.Parse(_config["JwtSettings:DurationInMinutes"])),
-                Issuer = _config["JwtSettings:Issuer"],
-                Audience = _config["JwtSettings:Audience"],
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                Expires = DateTime.UtcNow.AddHours(2),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                Issuer = _configuration["JwtSettings:Issuer"],
+                Audience = _configuration["JwtSettings:Audience"]
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
 
-        public async Task<List<UserDto>> GetAllUsersAsync()
+        // Admin Methods
+        public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
         {
             return await _context.Users
-                .Select(u => new UserDto { Id = u.Id, Username = u.Username, Email = u.Email, Role = u.Role })
-                .ToListAsync();
+                .Select(u => new UserDto
+                {
+                    Id = u.Id,
+                    Username = u.Username,
+                    Email = u.Email,
+                    Role = u.Role
+                }).ToListAsync();
+        }
+
+        public async Task<UserDto> GetUserByIdAsync(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null) throw new KeyNotFoundException("User not found");
+
+            return new UserDto
+            {
+                Id = user.Id,
+                Username = user.Username,
+                Email = user.Email,
+                Role = user.Role
+            };
+        }
+
+        public async Task DeleteUserAsync(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null) throw new KeyNotFoundException("User not found");
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
         }
     }
 }

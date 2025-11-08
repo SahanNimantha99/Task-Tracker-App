@@ -6,6 +6,10 @@ namespace TaskTracker.Application.Interfaces
     {
         Task<UserDto> RegisterAsync(UserRegisterDto dto);
         Task<string> LoginAsync(UserLoginDto dto);
-        Task<List<UserDto>> GetAllUsersAsync();
+        
+        // Admin/Management methods
+        Task<IEnumerable<UserDto>> GetAllUsersAsync();
+        Task<UserDto> GetUserByIdAsync(int id);
+        Task DeleteUserAsync(int id);
     }
 }

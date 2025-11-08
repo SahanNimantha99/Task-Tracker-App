@@ -1,4 +1,4 @@
-namespace TaskTracker.Domain.Enums
+namespace TaskTracker.Domain.Entities
 {
     public enum TaskStatus
     {
