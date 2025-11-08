@@ -1,0 +1,5 @@
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.csproj.AssemblyReference.cache
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.AssemblyInfoInputs.cache
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.AssemblyInfo.cs
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.csproj.CoreCompileInputs.cache

@@ -1,0 +1,287 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.API\\TaskTracker.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.API\\TaskTracker.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.API\\TaskTracker.API.csproj",
+        "projectName": "TaskTracker.API",
+        "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.API\\TaskTracker.API.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Application\\TaskTracker.Application.csproj": {
+                "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Application\\TaskTracker.Application.csproj"
+              },
+              "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj": {
+                "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj"
+              },
+              "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\TaskTracker.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\TaskTracker.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Application\\TaskTracker.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Application\\TaskTracker.Application.csproj",
+        "projectName": "TaskTracker.Application",
+        "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Application\\TaskTracker.Application.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj",
+        "projectName": "TaskTracker.Domain",
+        "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\TaskTracker.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\TaskTracker.Infrastructure.csproj",
+        "projectName": "TaskTracker.Infrastructure",
+        "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\TaskTracker.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj": {
+                "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\bin\Debug\net6.0\TaskTracker.Domain.deps.json
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\bin\Debug\net6.0\TaskTracker.Domain.dll
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\bin\Debug\net6.0\TaskTracker.Domain.pdb
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\TaskTracker.Domain.csproj.AssemblyReference.cache
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\TaskTracker.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\TaskTracker.Domain.AssemblyInfoInputs.cache
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\TaskTracker.Domain.AssemblyInfo.cs
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\TaskTracker.Domain.csproj.CoreCompileInputs.cache
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\TaskTracker.Domain.dll
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\refint\TaskTracker.Domain.dll
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\TaskTracker.Domain.pdb
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Domain\obj\Debug\net6.0\ref\TaskTracker.Domain.dll
