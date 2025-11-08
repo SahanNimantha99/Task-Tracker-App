@@ -28,7 +28,7 @@ namespace TaskTracker.Application.Services
                 Id = t.Id,
                 Title = t.Title,
                 Description = t.Description,
-                Status = t.Status.ToString(),
+                Status = t.Status,  // Already a string in Domain
                 AssignedUser = t.AssignedUser?.Username
             }).ToList();
         }
@@ -43,13 +43,14 @@ namespace TaskTracker.Application.Services
                 Id = task.Id,
                 Title = task.Title,
                 Description = task.Description,
-                Status = task.Status.ToString(),
+                Status = task.Status,
                 AssignedUser = task.AssignedUser?.Username
             };
         }
 
         public DomainTask CreateTask(TaskDto dto)
         {
+            // Parse status from string to enum (optional validation)
             DomainTaskStatus status = Enum.TryParse<DomainTaskStatus>(dto.Status, out var parsedStatus)
                 ? parsedStatus
                 : DomainTaskStatus.Pending;
@@ -59,7 +60,9 @@ namespace TaskTracker.Application.Services
                 : null;
 
             int newId = _tasks.Any() ? _tasks.Max(t => t.Id) + 1 : 1;
-            var newTask = new DomainTask(newId, dto.Title, dto.Description, status, assignedUser);
+
+            // Convert enum to string when creating the domain task
+            var newTask = new DomainTask(newId, dto.Title, dto.Description, status.ToString(), assignedUser);
 
             _tasks.Add(newTask);
             return newTask;
@@ -72,7 +75,9 @@ namespace TaskTracker.Application.Services
 
             DomainTaskStatus status = Enum.TryParse<DomainTaskStatus>(dto.Status, out var parsedStatus)
                 ? parsedStatus
-                : existingTask.Status;
+                : Enum.TryParse<DomainTaskStatus>(existingTask.Status, out var existingStatus)
+                    ? existingStatus
+                    : DomainTaskStatus.Pending;
 
             DomainUser? assignedUser = !string.IsNullOrEmpty(dto.AssignedUser)
                 ? _users.FirstOrDefault(u => u.Username == dto.AssignedUser)
@@ -82,7 +87,7 @@ namespace TaskTracker.Application.Services
                 existingTask.Id,
                 dto.Title ?? existingTask.Title,
                 dto.Description ?? existingTask.Description,
-                status,
+                status.ToString(), // <-- convert enum to string
                 assignedUser
             );
 

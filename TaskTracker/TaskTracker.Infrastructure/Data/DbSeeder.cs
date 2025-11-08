@@ -15,23 +15,12 @@ namespace TaskTracker.Infrastructure.Data
             {
                 var users = new List<User>
                 {
-                    new User
-                    {
-                        Id = 1,
-                        Username = "admin",
-                        Password = "admin123",
-                        Role = "Admin"
-                    },
-                    new User
-                    {
-                        Id = 2,
-                        Username = "employee",
-                        Password = "emp123",
-                        Role = "Employee"
-                    }
+                    new User { Id = 1, Username = "admin", Role = "Admin" },
+                    new User { Id = 2, Username = "employee", Role = "Employee" }
                 };
 
                 context.Users.AddRange(users);
+                context.SaveChanges();
             }
 
             // ---------------- Tasks ----------------
@@ -46,8 +35,9 @@ namespace TaskTracker.Infrastructure.Data
                         Description = "Setup MySQL database",
                         Status = "Pending",
                         AssignedUserId = 2,
-                        AssignedUser = context.Users.FirstOrDefault(u => u.Id == 2),
-                        DueDate = DateTime.UtcNow.AddDays(5)
+                        AssignedUser = context.Users.First(u => u.Id == 2),
+                        DueDate = DateTime.UtcNow.AddDays(5),
+                        CreatedAt = DateTime.UtcNow
                     },
                     new TaskItem
                     {
@@ -56,16 +46,15 @@ namespace TaskTracker.Infrastructure.Data
                         Description = "Create REST APIs for Task Tracker",
                         Status = "InProgress",
                         AssignedUserId = 2,
-                        AssignedUser = context.Users.FirstOrDefault(u => u.Id == 2),
-                        DueDate = DateTime.UtcNow.AddDays(10)
+                        AssignedUser = context.Users.First(u => u.Id == 2),
+                        DueDate = DateTime.UtcNow.AddDays(10),
+                        CreatedAt = DateTime.UtcNow
                     }
                 };
 
                 context.Tasks.AddRange(tasks);
+                context.SaveChanges();
             }
-
-            // Save all changes
-            context.SaveChanges();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using TaskTracker.Application.Interfaces;
 using TaskTracker.Application.Services;
 using TaskTracker.Infrastructure.Data;
+using TaskTracker.Domain.Entities; // For TaskItem and User
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,11 +21,18 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
-// Add services (DI)
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<TaskService>(); // Add TaskService if you need it
+// ------------------ In-memory storage for TaskService ------------------
+var taskList = new List<TaskItem>();
+var userList = new List<User>();
 
-// JWT Authentication
+builder.Services.AddSingleton(taskList);
+builder.Services.AddSingleton(userList);
+
+// ------------------ Register Services ------------------
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<TaskService>();
+
+// ------------------ JWT Authentication ------------------
 var key = Encoding.ASCII.GetBytes(builder.Configuration["JwtSettings:SecretKey"]);
 
 builder.Services.AddAuthentication(options =>
@@ -48,7 +56,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Swagger
+// ------------------ Swagger ------------------
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
