@@ -2,6 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using TaskTracker.Infrastructure.Data;
 using TaskTracker.Application.Interfaces;
 using TaskTracker.Application.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Register your services
 builder.Services.AddScoped<IUserService, UserService>();
 
-// JWT Authentication setup (as described earlier)
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-
+// JWT Authentication setup
 var key = Encoding.ASCII.GetBytes(builder.Configuration["JwtSettings:SecretKey"]);
 
 builder.Services.AddAuthentication(options =>
@@ -44,7 +43,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Swagger (optional)
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -58,11 +57,16 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-// Add authentication & authorization middleware
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
+
+// **Seed database**
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.EnsureCreated();
+    DbSeeder.Seed(dbContext);
+}
 
 app.Run();

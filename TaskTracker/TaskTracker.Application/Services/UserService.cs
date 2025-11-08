@@ -1,14 +1,14 @@
-using TaskTracker.Application.DTOs;
-using TaskTracker.Application.Interfaces;
-using TaskTracker.Domain.Entities;
-using TaskTracker.Infrastructure.Data;
+using BCrypt.Net;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-
+using TaskTracker.Application.DTOs;
+using TaskTracker.Application.Interfaces;
+using TaskTracker.Domain.Entities;
+using TaskTracker.Infrastructure.Data;
 
 namespace TaskTracker.Application.Services
 {
@@ -25,8 +25,8 @@ namespace TaskTracker.Application.Services
 
         public async Task<UserDto> RegisterAsync(UserRegisterDto dto)
         {
-            var exists = await _context.Users.AnyAsync(u => u.Username == dto.Username);
-            if (exists) throw new Exception("Username already exists");
+            if (await _context.Users.AnyAsync(u => u.Username == dto.Username))
+                throw new Exception("Username already exists");
 
             var user = new User
             {
@@ -56,6 +56,7 @@ namespace TaskTracker.Application.Services
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_config["JwtSettings:SecretKey"]);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
@@ -69,6 +70,7 @@ namespace TaskTracker.Application.Services
                 Audience = _config["JwtSettings:Audience"],
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
+
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }

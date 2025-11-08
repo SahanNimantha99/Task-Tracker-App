@@ -1,5 +1,17 @@
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\bin\Debug\net6.0\TaskTracker.Application.deps.json
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\bin\Debug\net6.0\TaskTracker.Application.dll
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\bin\Debug\net6.0\TaskTracker.Application.pdb
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\bin\Debug\net6.0\TaskTracker.Domain.dll
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\bin\Debug\net6.0\TaskTracker.Infrastructure.dll
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\bin\Debug\net6.0\TaskTracker.Domain.pdb
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\bin\Debug\net6.0\TaskTracker.Infrastructure.pdb
 C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.csproj.AssemblyReference.cache
 C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.AssemblyInfoInputs.cache
 C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.AssemblyInfo.cs
 C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.csproj.CoreCompileInputs.cache
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.csproj.CopyComplete
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.dll
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\refint\TaskTracker.Application.dll
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\TaskTracker.Application.pdb
+C:\Users\DELL\OneDrive\Desktop\GIT my\Task-Tracker-App\TaskTracker\TaskTracker.Application\obj\Debug\net6.0\ref\TaskTracker.Application.dll

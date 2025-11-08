@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oDtS7CnbMBebqhsV3TOqInEyKBQ2kkKCoJBiUfWWSP62e4oUa5uDb9mDSGgPzRiIzlKIYAjCPONCIBoxcEBgRA==",
+  "dgSpecHash": "Byh97EFviuLmSolyLlxmlmuxR5G8scovnyFooXFaEx/Ygt5JTaECwomf24o84MQC/0a/RxKmtWqPTp4dlNtEgA==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\TaskTracker.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.16\\microsoft.entityframeworkcore.6.0.16.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.16\\microsoft.entityframeworkcore.abstractions.6.0.16.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.16\\microsoft.entityframeworkcore.analyzers.6.0.16.nupkg.sha512",

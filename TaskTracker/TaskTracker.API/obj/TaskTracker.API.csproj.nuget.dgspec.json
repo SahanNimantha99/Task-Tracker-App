@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.16, )"
@@ -72,7 +76,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.10.0, )"
+              "version": "[6.29.0, )"
             }
           },
           "imports": [
@@ -123,7 +127,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj": {
+                "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Domain\\TaskTracker.Domain.csproj"
+              },
+              "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\TaskTracker.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\GIT my\\Task-Tracker-App\\TaskTracker\\TaskTracker.Infrastructure\\TaskTracker.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -135,6 +146,28 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Primitives": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.14.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.29.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -254,6 +287,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.16, )"
